@@ -31,6 +31,7 @@
   # Installing Packages
   environment.systemPackages = with pkgs; [
     neovim
+    git
   ];
 
   # WSL
