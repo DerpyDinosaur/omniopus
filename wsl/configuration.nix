@@ -7,28 +7,39 @@
 
 { config, lib, pkgs, ... }:
 
-let
-  user="adam";
-  workUser="si";
-in
 {
-  imports = [
-    # include NixOS-WSL modules
-    <nixos-wsl/modules>
-  ];
+  # Define user accounts
+  users.users = {
+    # Personal Account
+    albalamia = {
+      createHome = true;
+      description = "Personal Account";
+      extraGroups = [ "wheel" ];
+      group = "users";
+      isNormalUser = true;
+    };
+    # Work Account
+    si = {
+      createHome = true;
+      description = "Work Account";
+      extraGroups = [ "wheel" ];
+      group = "users";
+      isNormalUser = true;
+    };
+  };
 
-  # wsl.defaultUser = "adam";
-  wsl.enable = true;
-  wsl.docker-desktop.enable = true;
-
+  # Installing Packages
   environment.systemPackages = with pkgs; [
     neovim
   ];
 
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
-  }
+  # WSL
+  wsl.enable = true;
+  wsl.defaultUser = "nixos";
+  wsl.docker-desktop.enable = true;
+
+  # Enable Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
