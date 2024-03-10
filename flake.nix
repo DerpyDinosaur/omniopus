@@ -1,5 +1,5 @@
 {
-  description = "Omnia Flake";
+  description = "Omni Opus";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
