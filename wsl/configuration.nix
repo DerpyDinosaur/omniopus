@@ -5,7 +5,7 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   # Define user accounts
@@ -19,12 +19,20 @@
       isNormalUser = true;
     };
     # Work Account
-    si = {
-      createHome = true;
-      description = "Work Account";
-      extraGroups = [ "wheel" ];
-      group = "users";
-      isNormalUser = true;
+    # si = {
+    #   createHome = true;
+    #   description = "Work Account";
+    #   extraGroups = [ "wheel" ];
+    #   group = "users";
+    #   isNormalUser = true;
+    # };
+  };
+
+  # Home Manager
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "si" = import ../users/si.nix;
     };
   };
 
