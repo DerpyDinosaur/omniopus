@@ -3,24 +3,20 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }@inputs:
+  outputs = inputs@{ self, nixpkgs, nixos-wsl, home-manager, ... }:
   {
-    nixosConfigurations = {
-      wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./wsl/configuration.nix
-          nixos-wsl.nixosModules.wsl
-          home-manager.nixosModules.home-manager
-        ];
-      };
-    };
+    nixosConfigurations = (
+      import ./hosts { inherit (nixpkgs) lib; inherit inputs nixpkgs home-manager nixos-wsl; }
+    );
   };
 }

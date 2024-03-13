@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "si";
-  home.homeDirectory = "/home/si";
+  home.username = "nixos";
+  home.homeDirectory = "/home/nixos";
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [];
