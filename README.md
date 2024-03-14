@@ -1,10 +1,18 @@
-# Omni Opus
+<div align="center">
+
+## Omni Opus
 
 The Everything Masterpiece.
 
 All my nix files managed in one central location.
 
-## Installation
+</div>
+
+### TODO
+
+Create releases of older branches so that they can be archived forever.
+
+### Installation
 
 Where TAG is specified is how you select the host you would like the flake to apply too.
 
@@ -14,7 +22,7 @@ sudo nixos-rebuild test --flake github:DerpyDinosaur/omniopus#[TAG]
 nix-env --uninstall git
 ```
 
-## WSL Issues
+### WSL Issues
 
 I had an issue with flakes in WSL modules, the following discussion fixed it.
 
