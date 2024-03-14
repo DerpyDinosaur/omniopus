@@ -10,29 +10,19 @@
 {
   # Define user accounts
   users.users = {
-    # Personal Account
     albalamia = {
       createHome = true;
       description = "Personal Account";
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "docker" ];
       group = "users";
       isNormalUser = true;
     };
-    # Work Account
-    # si = {
-    #   createHome = true;
-    #   description = "Work Account";
-    #   extraGroups = [ "wheel" ];
-    #   group = "users";
-    #   isNormalUser = true;
-    # };
-  };
 
-  # Home Manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "si" = import ../users/si.nix;
+    nixos = {
+      createHome = true;
+      extraGroups = [ "wheel" "docker" ];
+      group = "users";
+      isNormalUser = true;
     };
   };
 
@@ -44,7 +34,7 @@
 
   # WSL
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = "albalamia";
   wsl.docker-desktop.enable = true;
 
   # Enable Flakes

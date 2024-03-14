@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl = {
@@ -15,8 +15,23 @@
 
   outputs = inputs@{ self, nixpkgs, nixos-wsl, home-manager, ... }:
   {
-    nixosConfigurations = (
-      import ./hosts { inherit (nixpkgs) lib; inherit inputs nixpkgs home-manager nixos-wsl; }
-    );
+    nixosConfigurations = {
+      wsl = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ 
+          ./configuration.nix
+          nixos-wsl.nixosModules.wsl
+          home-manager.nixosModules.home-manager{
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.albalamia = import ./albalamia.nix;
+          }
+        ];
+      };
+    };
+
+    homeConfigurations = {
+
+    };
   };
 }
