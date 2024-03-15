@@ -13,25 +13,19 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixos-wsl, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, ... }:
+  let
+    username = "albalamia";
+  in
   {
-    nixosConfigurations = {
-      wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [ 
-          ./configuration.nix
-          nixos-wsl.nixosModules.wsl
-          home-manager.nixosModules.home-manager{
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.albalamia = import ./albalamia.nix;
-          }
-        ];
-      };
-    };
-
-    homeConfigurations = {
-
-    };
+    nixosConfigurations = (
+      import ./hosts {
+        # Functional
+        inherit nixpkgs home-manager nixos-wsl;
+        # Non-Functional
+        inherit username;
+      }
+    );
   };
 }
+
