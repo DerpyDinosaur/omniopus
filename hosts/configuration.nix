@@ -1,13 +1,16 @@
 { pkgs, username, ... }:
 
 {
-  users.users.${username} = {
-    description = "Personal Account";
+  users = {
+    users.${username} = {
+      description = "Personal Account";
 
-    group = "users";
-    extraGroups = [ "wheel" "docker" ];
-    isNormalUser = true;
-    shell = pkgs.zsh;
+      group = "users";
+      extraGroups = [ "wheel" "docker" ];
+      isNormalUser = true;
+      useDefaultShell = true;
+    };
+    defaultUserShell = pkgs.zsh;
   };
 
   home-manager = {

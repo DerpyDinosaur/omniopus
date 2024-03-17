@@ -22,12 +22,21 @@
   };
 
   # Bash
-  programs.bash = {
+  programs.zsh = {
     enable = true;
-    sessionVariables = {
-      EDITOR = "nvim";
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "si";
+      custom = "/home/si/.oh-my-zsh";
     };
+
+    history.size = 1000;
   };
+  home.file.".oh-my-zsh/themes/si.zsh-theme".source = ../programs/zsh/si.zsh-theme;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

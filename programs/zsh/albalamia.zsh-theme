@@ -1,5 +1,8 @@
-local user='%{$FG[green]%}%n%{$reset_color%} :: '
-local pwd='%3~'
+GREEN="%{$fg[green]%}"
+RESET="%{$reset_color%}"
 
-PROMPT='${user}'
-RPROMPT='%m ${pwd}'
+USER="$GREEN%n$RESET :: "
+PWD="%3~"
+
+PROMPT="$USER"
+RPROMPT="%m $PWD"

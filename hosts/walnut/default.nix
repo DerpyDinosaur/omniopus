@@ -13,6 +13,7 @@
     group = "users";
     extraGroups = [ "wheel" "docker" ];
     isNormalUser = true;
+    useDefaultShell = true;
   };
 
   home-manager = {
