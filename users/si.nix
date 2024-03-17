@@ -16,9 +16,7 @@
     enable = true;
     userName = "albalamia";
     userEmail = "adam.brickhill@seamlessintelligence.com.au";
-    extraConfig = {
-      credential.helper = "store";
-    };
+    extraConfig.credential.helper = "store";
   };
 
   # Bash

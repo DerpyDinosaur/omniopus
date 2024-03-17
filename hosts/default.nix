@@ -28,11 +28,11 @@
     ];
   };
 
-  si = nixpkgs.lib.nixosSystem {
+  walnut = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = { inherit username; };
     modules = [
-      ./si
+      ./walnut
       ./configuration.nix
       nixos-wsl.nixosModules.wsl
       home-manager.nixosModules.home-manager

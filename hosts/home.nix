@@ -16,9 +16,7 @@
     enable = true;
     userName = "DerpyDinosaur";
     userEmail = "adam.brickhill@lonetree.xyz";
-    extraConfig = {
-      credential.helper = "store";
-    };
+    extraConfig.credential.helper = "store";
   };
 
   # ZSH
