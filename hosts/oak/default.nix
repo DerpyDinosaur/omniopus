@@ -4,6 +4,8 @@
 { pkgs, nixos-wsl, home-manager, ... }:
 
 {
+  networking.hostName = "oak";
+
   # Define user accounts
   users.users.si = {
     description = "Work Account";

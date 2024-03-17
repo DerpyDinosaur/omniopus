@@ -1,9 +1,11 @@
-# SI - Work PC
+# Walnut - Work PC
 # Work
 
 { pkgs, nixos-wsl, home-manager, ... }:
 
 {
+  networking.hostName = "walnut";
+  
   # Define user accounts
   users.users.si = {
     description = "Work Account";
@@ -25,5 +27,5 @@
   # WSL
   wsl.enable = true;
   wsl.defaultUser = "si";
-  # wsl.docker-desktop.enable = true;
+  wsl.docker-desktop.enable = true;
 }

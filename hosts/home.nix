@@ -7,6 +7,7 @@
     stateVersion = "23.11";
     packages = with pkgs;
     [
+      # ..
     ];
   };
 
@@ -37,7 +38,6 @@
 
     history.size = 1000;
   };
-  home.file.".oh-my-zsh/themes/test.zsh-theme".source = ../programs/zsh/test.zsh-theme;
   home.file.".oh-my-zsh/themes/albalamia.zsh-theme".source = ../programs/zsh/albalamia.zsh-theme;
 
   # Let Home Manager install and manage itself.
