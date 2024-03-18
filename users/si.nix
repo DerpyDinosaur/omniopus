@@ -16,7 +16,10 @@
     enable = true;
     userName = "albalamia";
     userEmail = "adam.brickhill@seamlessintelligence.com.au";
-    extraConfig.credential.helper = "store";
+    extraConfig = {
+      safe.directory = "/mnt/d/**";
+      credential.helper = "store";
+    };
   };
 
   # Bash

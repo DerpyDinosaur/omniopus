@@ -16,7 +16,10 @@
     enable = true;
     userName = "DerpyDinosaur";
     userEmail = "adam.brickhill@lonetree.xyz";
-    extraConfig.credential.helper = "store";
+    extraConfig = {
+      safe.directory = "/mnt/d/**";
+      credential.helper = "store";
+    };
   };
 
   # ZSH
