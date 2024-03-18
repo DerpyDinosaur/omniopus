@@ -17,7 +17,6 @@
     userName = "DerpyDinosaur";
     userEmail = "adam.brickhill@lonetree.xyz";
     extraConfig = {
-      safe.directory = "/mnt/d/**";
       credential.helper = "store";
     };
   };
