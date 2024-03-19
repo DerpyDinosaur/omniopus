@@ -26,8 +26,19 @@
     neovim
     # Github
     git
+    # Tools
+    trashy
   ];
-  programs.zsh.enable = true;
+  programs = {
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+
+    zsh = {
+      enable = true;
+    };
+  };
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
