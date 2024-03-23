@@ -22,12 +22,14 @@
 
   # Installing Packages
   environment.systemPackages = with pkgs; [
+    # Shell
     zsh
-    neovim
     # Github
     git
     # Tools
-    trashy
+    neovim
+    trash-cli
+    bun
   ];
   programs = {
     neovim = {
