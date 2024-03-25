@@ -18,6 +18,7 @@
     userEmail = "adam.brickhill@seamlessintelligence.com.au";
     extraConfig = {
       credential.helper = "store";
+      safe.directory = "/mnt/d/*";
     };
   };
 
