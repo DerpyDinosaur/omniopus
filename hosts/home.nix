@@ -33,7 +33,7 @@
       enable = true;
       plugins = [ "git" ];
       theme = "albalamia";
-      custom = "/home/albalamia/.oh-my-zsh";
+      custom = "/home/${username}/.oh-my-zsh";
     };
 
     history.size = 1000;
