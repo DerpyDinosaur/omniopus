@@ -11,7 +11,7 @@
     system = "x86_64-linux";
     specialArgs = { inherit username; };
     modules = [
-      ./bonsia-blossom
+      ./bonsai-blossom
       ./configuration.nix
       home-manager.nixosModules.home-manager
     ];

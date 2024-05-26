@@ -8,7 +8,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "blossom";
+  networking.hostName = "bonsai-blossom";
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
