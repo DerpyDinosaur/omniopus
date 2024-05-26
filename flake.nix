@@ -15,7 +15,7 @@
 
   outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, ... }:
   let
-    username = "albalamia";
+    username = "adam";
   in
   {
     nixosConfigurations = (

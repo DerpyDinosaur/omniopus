@@ -40,8 +40,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "au";
-    xkbVariant = "";
+    xkb.layout = "au";
+    xkb.variant = "";
   };
 
   # Window Manager
