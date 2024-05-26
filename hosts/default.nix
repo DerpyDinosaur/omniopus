@@ -7,15 +7,15 @@
 { nixpkgs, home-manager, nixos-wsl, username, ... }:
 
 {
-  # bonsai-azalea = nixpkgs.lib.nixosSystem {
-  #   system = "x86_64-linux";
-  #   specialArgs = { inherit username; };
-  #   modules = [
-  #     ./bonsia-azalea
-  #     ./configuration.nix
-  #     home-manager.nixosModules.home-manager
-  #   ];
-  # };
+  bonsai-blossom = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+    specialArgs = { inherit username; };
+    modules = [
+      ./bonsia-blossom
+      ./configuration.nix
+      home-manager.nixosModules.home-manager
+    ];
+  };
 
   oak = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
