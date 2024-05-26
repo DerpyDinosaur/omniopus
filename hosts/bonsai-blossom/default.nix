@@ -42,6 +42,12 @@
     xkbVariant = "";
   };
 
+  # Window Manager
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
   # Define user accounts
   users.users.si = {
     description = "Work Account";
@@ -62,5 +68,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Installing Packages
-  environment.systemPackages = with pkgs; [  ];
+  environment.systemPackages = with pkgs; [
+    wl-clipboard
+  ];
 }
