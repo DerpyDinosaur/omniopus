@@ -15,8 +15,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  networking.wireless.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    # wireless.enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Australia/Perth";
