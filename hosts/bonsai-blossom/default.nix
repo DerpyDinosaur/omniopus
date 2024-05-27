@@ -36,6 +36,8 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
+  services.xserver.layout = "aus";
+
   # Window Manager
   hardware.opengl.enable = true;
   programs = {
@@ -53,6 +55,13 @@
         # rofi
         # termite
       ];
+      extraSessionCommands = ''
+        export SDL_VIDEODRIVER=wayland
+        export QT_QPA_PLATFORM=wayland
+        export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+        export _JAVA_AWT_WM_NONREPARENTING=1
+        export MOZ_ENABLE_WAYLAND=1
+      '';
     };
     waybar.enable = true;
     light.enable = true;
