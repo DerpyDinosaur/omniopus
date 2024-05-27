@@ -23,5 +23,8 @@
     };
   };
 
+  # Wallpaper
+  home.file.".wallpapers"."spiderverse.jpg".source = ../../wallpapers/spiderverse.jpg;
+
   home.stateVersion = "23.11";
 }

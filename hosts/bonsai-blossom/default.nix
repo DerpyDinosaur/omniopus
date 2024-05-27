@@ -86,9 +86,6 @@
     };
   };
 
-  # Wallpaper
-  environment.home.${username}.".wallpapers"."spiderverse.jpg".source = ../../wallpapers/spiderverse.jpg;
-
   # Window Manager
   security.polkit.enable = true;
 }
