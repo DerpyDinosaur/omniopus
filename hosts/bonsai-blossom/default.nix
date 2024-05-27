@@ -72,7 +72,7 @@
     light.enable = true;
     # Sway
     waybar.enable = true; # Bar
-  }
+  };
 
   # Docker
   virtualisation.docker = {
