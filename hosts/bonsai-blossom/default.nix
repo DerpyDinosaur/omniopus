@@ -38,14 +38,24 @@
 
   # Window Manager
   hardware.opengl.enable = true;
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-    extraPackages = with pkgs; [
-      wl-clipboard # Wayland copy&paste support
-      # rofi
-      # termite
-    ];
+  programs = {
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      extraPackages = with pkgs; [
+        wl-clipboard # Wayland copy&paste support
+        swaylock 
+        swayidle 
+        foot 
+        dmenu 
+        wmenu
+        light
+        # rofi
+        # termite
+      ];
+    };
+    waybar.enable = true;
+    light.enable = true;
   };
 
   # Define user accounts
@@ -76,11 +86,6 @@
     # Browser
     firefox-devedition
   ];
-
-  programs = {
-    # Brightness Control
-    light.enable = true;
-  };
 
   # Docker
   virtualisation.docker = {
