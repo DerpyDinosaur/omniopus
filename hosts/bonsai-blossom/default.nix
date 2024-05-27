@@ -91,16 +91,18 @@
   fonts = {
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
       noto-fonts-emoji
-      font-awesome
+      noto-fonts-cjk
       source-han-sans
-      source-han-sans-japanese
-      source-han-serif-japanese
+      # Mono
+      jetbrains-mono
+      # Icons
+      font-awesome
     ];
     fontconfig.defaultFonts = {
       serif = [ "Noto Serif" "Source Han Serif" ];
       sansSerif = [ "Noto Sans" "Source Han Sans" ];
+      monospace = [ "JetBrains Mono" ];
     };
   };
 }
