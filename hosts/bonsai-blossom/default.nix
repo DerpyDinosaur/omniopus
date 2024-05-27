@@ -35,9 +35,6 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  # Window Manager
-  security.polkit.enable = true;
-
   # Define user accounts
   users.users.si = {
     description = "Work Account";
@@ -52,7 +49,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.si = import ../../users/si.nix;
-    users.adam = import ./home.nix;
   };
 
   # Allow unfree packages
@@ -66,4 +62,20 @@
     # Terminal
     kitty
   ];
+
+  # Window Manager
+  security.polkit.enable = true;
+
+  wayland.windowManager.sway = {
+    enable = true;
+    config = rec {
+      modifier = "Mod1"; # Alt Key
+      terminal = "kitty";
+      output = {
+        "Virtual-1" = {
+          mode = "1920x1080@120Hz";
+        };
+      };
+    };
+  };
 }
