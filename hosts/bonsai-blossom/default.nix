@@ -67,8 +67,18 @@
     kitty
   ];
 
-  # Brightness
-  programs.light.enable = true;
+  programs = {
+    # Brightness Control
+    light.enable = true;
+    # Sway
+    waybar.enable = true; # Bar
+  }
+
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    # enableOnBoot = true;
+  };
 
   fonts = {
     packages = with pkgs; [
