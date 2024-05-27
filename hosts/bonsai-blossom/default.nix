@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
   ];
 
+
   networking.hostName = "bonsai-blossom";
   
   # Bootloader.
@@ -35,6 +36,18 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
+  # Window Manager
+  hardware.opengl.enable
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [
+      wl-clipboard # Wayland copy&paste support
+      rofi
+      termite
+    ];
+  };
+
   # Define user accounts
   users.users.${username}.extraGroups = [ "video" ]; # Volume
 
@@ -60,18 +73,13 @@
 
   # Installing Packages
   environment.systemPackages = with pkgs; [
-    wl-clipboard # Wayland copy&paste support
     # Browser
     firefox-devedition
-    # Terminal
-    kitty
   ];
 
   programs = {
     # Brightness Control
     light.enable = true;
-    # Sway
-    waybar.enable = true; # Bar
   };
 
   # Docker
@@ -95,7 +103,4 @@
       sansSerif = [ "Noto Sans" "Source Han Sans" ];
     };
   };
-
-  # Window Manager
-  security.polkit.enable = true;
 }
