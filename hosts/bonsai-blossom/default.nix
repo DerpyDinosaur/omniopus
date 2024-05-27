@@ -36,7 +36,7 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  services.xserver.layout = "aus";
+  services.xserver.xkb.layout = "aus";
 
   # Window Manager
   hardware.opengl.enable = true;
