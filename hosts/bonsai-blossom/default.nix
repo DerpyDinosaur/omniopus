@@ -15,10 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable networking
-  networking = {
-    networkmanager.enable = true;
-    # wireless.enable = true;
-  };
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Australia/Perth";
@@ -45,9 +42,23 @@
   };
 
   # Window Manager
-  programs.sway = {
+  security.polkit.enable = true;
+  # programs.sway = {
+  #   enable = true;
+  #   wrapperFeatures.gtk = true;
+  # };
+  
+  wayland.windowManager.sway = {
     enable = true;
-    wrapperFeatures.gtk = true;
+    config = rec {
+      modifier = "Mod1";
+      # Use kitty as default terminal
+      terminal = "kitty";
+      # startup = [
+        # Launch Firefox on start
+        # {command = "firefox";}
+      # ];
+    };
   };
 
   # Define user accounts
@@ -71,6 +82,10 @@
 
   # Installing Packages
   environment.systemPackages = with pkgs; [
-    wl-clipboard
+    wl-clipboard # Wayland copy&paste support
+    # Browser
+    firefox-devedition
+    # Terminal
+    kitty
   ];
 }
