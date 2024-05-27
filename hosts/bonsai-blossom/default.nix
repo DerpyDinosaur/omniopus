@@ -1,6 +1,6 @@
 # Blossom - Personal Laptop
 
-{ config, pkgs, home-manager, ... }:
+{ config, pkgs, home-manager, username, ... }:
 
 {
   imports = [ 
@@ -37,14 +37,6 @@
 
   # Window Manager
   security.polkit.enable = true;
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      modifier = "Mod1";
-      terminal = "kitty";
-      startup = [];
-    };
-  };
 
   # Define user accounts
   users.users.si = {
