@@ -43,8 +43,8 @@
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       wl-clipboard # Wayland copy&paste support
-      rofi
-      termite
+      # rofi
+      # termite
     ];
   };
 
