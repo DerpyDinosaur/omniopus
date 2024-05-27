@@ -43,21 +43,12 @@
 
   # Window Manager
   security.polkit.enable = true;
-  # programs.sway = {
-  #   enable = true;
-  #   wrapperFeatures.gtk = true;
-  # };
-  
   wayland.windowManager.sway = {
     enable = true;
     config = rec {
       modifier = "Mod1";
-      # Use kitty as default terminal
       terminal = "kitty";
-      # startup = [
-        # Launch Firefox on start
-        # {command = "firefox";}
-      # ];
+      startup = [];
     };
   };
 
