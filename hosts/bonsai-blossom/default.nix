@@ -37,7 +37,7 @@
   };
 
   # Window Manager
-  hardware.opengl.enable
+  hardware.opengl.enable = true;
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
