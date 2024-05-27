@@ -70,7 +70,7 @@
   # Brightness
   programs.light.enable = true;
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "DroidSansMono" ]; })
     dejavu_fonts # mind the underscore! most of the packages are named with a hypen, not this one however
     noto-fonts
