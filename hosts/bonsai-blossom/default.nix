@@ -35,12 +35,6 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "au";
-    xkb.variant = "";
-  };
-
   # Window Manager
   security.polkit.enable = true;
   wayland.windowManager.sway = {
@@ -65,7 +59,9 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    extraSpecialArgs = { inherit username; };
     users.si = import ../../users/si.nix;
+    users.${username} = import ./home.nix;
   };
 
   # Allow unfree packages
