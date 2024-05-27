@@ -45,6 +45,13 @@
     useDefaultShell = true;
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.si = import ../../users/si.nix;
+    users.adam = import ./home.nix;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -59,11 +66,4 @@
 
   # Window Manager
   security.polkit.enable = true;
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.si = import ../../users/si.nix;
-    users.adam = import ./home.nix;
-  };
 }

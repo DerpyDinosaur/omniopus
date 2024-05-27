@@ -13,6 +13,7 @@
     modules = [
       ./bonsai-blossom
       ./configuration.nix
+      ../programs/greetd
       home-manager.nixosModules.home-manager
     ];
   };
