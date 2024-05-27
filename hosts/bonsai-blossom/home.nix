@@ -9,11 +9,14 @@
     config = rec {
       modifier = "Mod1"; # Alt Key
       terminal = "kitty";
-      output = {
-        "Virtual-1" = {
-          mode = "1920x1080@120Hz";
-        };
-      };
+      # output = {
+      #   "Virtual-1" = {
+      #     mode = "1920x1080@120Hz";
+      #   };
+      #   "Virtual-2" = {
+      #     mode = "1920x1080@120Hz";
+      #   };
+      # };
     };
   };
 

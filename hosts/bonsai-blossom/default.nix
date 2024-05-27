@@ -36,6 +36,8 @@
   };
 
   # Define user accounts
+  users.users.${username}.extraGroups = [ "video" ]; # Volume
+
   users.users.si = {
     description = "Work Account";
 
@@ -64,6 +66,20 @@
     # Terminal
     kitty
   ];
+
+  # Brightness
+  programs.light.enable = true;
+
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "DroidSansMono" ]; })
+    dejavu_fonts # mind the underscore! most of the packages are named with a hypen, not this one however
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+  ];
+
+  # Wallpaper
+  environment.etc."spiderverse.jpg".source = ../../wallpapers/spiderverse.jpg;
 
   # Window Manager
   security.polkit.enable = true;

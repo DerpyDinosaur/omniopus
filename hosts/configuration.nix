@@ -6,7 +6,7 @@
       description = "Personal Account";
 
       group = "users";
-      extraGroups = [ "wheel" "networkmanager" "docker" ];
+      extraGroups = [ "wheel" "docker" ];
       isNormalUser = true;
       useDefaultShell = true;
     };
