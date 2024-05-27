@@ -1,6 +1,6 @@
 # Blossom - Personal Laptop
 
-{ config, pkgs, home-manager, username, ... }:
+{ config, pkgs, home-manager, ... }:
 
 {
   imports = [ 
@@ -51,9 +51,8 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit username; };
     users.si = import ../../users/si.nix;
-    users.${username} = import ./home.nix;
+    users.adam = import ./home.nix;
   };
 
   # Allow unfree packages

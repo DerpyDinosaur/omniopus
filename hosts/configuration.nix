@@ -31,6 +31,7 @@
     trash-cli
     bun
   ];
+  
   programs = {
     neovim = {
       enable = true;
