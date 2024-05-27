@@ -11,7 +11,6 @@
       modifier = "Mod1"; # Alt Key
       terminal = "kitty";
       gaps.smartGaps = true;
-      bars.position = "top";
       # output = {
       #   "Virtual-1" = {
       #     mode = "1920x1080@120Hz";
