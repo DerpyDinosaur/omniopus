@@ -70,13 +70,21 @@
   # Brightness
   programs.light.enable = true;
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "DroidSansMono" ]; })
-    dejavu_fonts # mind the underscore! most of the packages are named with a hypen, not this one however
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-  ];
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      font-awesome
+      source-han-sans
+      source-han-sans-japanese
+      source-han-serif-japanese
+    ];
+    fontconfig.defaultFonts = {
+      serif = [ "Noto Serif" "Source Han Serif" ];
+      sansSerif = [ "Noto Sans" "Source Han Sans" ];
+    };
+  };
 
   # Wallpaper
   environment.etc."spiderverse.jpg".source = ../../wallpapers/spiderverse.jpg;
