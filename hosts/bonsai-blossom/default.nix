@@ -45,12 +45,6 @@
     useDefaultShell = true;
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.si = import ../../users/si.nix;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -66,16 +60,10 @@
   # Window Manager
   security.polkit.enable = true;
 
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      modifier = "Mod1"; # Alt Key
-      terminal = "kitty";
-      output = {
-        "Virtual-1" = {
-          mode = "1920x1080@120Hz";
-        };
-      };
-    };
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.si = import ../../users/si.nix;
+    users.adam = import ./home.nix;
   };
 }
