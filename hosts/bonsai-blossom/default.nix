@@ -47,12 +47,11 @@
       extraPackages = with pkgs; [
         wl-clipboard # Wayland copy&paste support
         swaylock 
-        swayidle 
+        swayidle
         foot 
-        dmenu 
         wmenu
         light
-        # rofi
+        rofi
         # termite
       ];
       extraSessionCommands = ''
