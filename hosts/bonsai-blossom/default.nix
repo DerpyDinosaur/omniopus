@@ -40,30 +40,30 @@
 
   # Window Manager
   hardware.opengl.enable = true;
+  programs.hyprland.enable = true;
   programs = {
-    hyprland.enable = true;
-    # sway = {
-    #   enable = true;
-    #   wrapperFeatures.gtk = true;
-    #   extraPackages = with pkgs; [
-    #     wl-clipboard # Wayland copy&paste support
-    #     swaylock 
-    #     swayidle
-    #     foot 
-    #     wmenu
-    #     light
-    #     rofi
-    #     # termite
-    #   ];
-    #   extraSessionCommands = ''
-    #     export SDL_VIDEODRIVER=wayland
-    #     export QT_QPA_PLATFORM=wayland
-    #     export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-    #     export _JAVA_AWT_WM_NONREPARENTING=1
-    #     export MOZ_ENABLE_WAYLAND=1
-    #   '';
-    # };
-    # waybar.enable = true;
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      extraPackages = with pkgs; [
+        wl-clipboard # Wayland copy&paste support
+        swaylock 
+        swayidle
+        foot
+        wmenu
+        light
+        rofi
+        # termite
+      ];
+      extraSessionCommands = ''
+        export SDL_VIDEODRIVER=wayland
+        export QT_QPA_PLATFORM=wayland
+        export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+        export _JAVA_AWT_WM_NONREPARENTING=1
+        export MOZ_ENABLE_WAYLAND=1
+      '';
+    };
+    waybar.enable = true;
     light.enable = true;
   };
 
