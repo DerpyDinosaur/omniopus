@@ -9,6 +9,7 @@
   home.file.".config/sway/config".source = ../../programs/sway/config;
 
   # Wallpaper
+  home.file.".wallpapers/abstract-wave.jpg".source = ../../wallpapers/abstract-wave.jpg;
   home.file.".wallpapers/spiderverse.jpg".source = ../../wallpapers/spiderverse.jpg;
 
   home.stateVersion = "23.11";

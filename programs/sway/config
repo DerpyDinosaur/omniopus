@@ -1,8 +1,8 @@
 #
 # Variables
 #
-	# Logo key. Use Mod1 for Alt.
-	set $mod Mod4
+	# Logo Key Mod4 | Left Alt Key Mod1
+	set $mod Mod1
 
 	# Home row direction keys, like vim
 	set $left h
@@ -18,8 +18,8 @@
 #
 # Monitors
 #
-	output eDP-1 mode 1920x1080@60.008 pos 0 0 bg $HOME/.wallpaper/spiderverse.jpg
-	output DP-1 mode 1920x515@60.075 pos 0 1080
+	output eDP-1 mode 1920x1080@60.008Hz pos 0 0 bg $HOME/.wallpapers/spiderverse.jpg fill
+	output DP-1 mode 1920x515@60.075Hz pos 0 1080 bg $HOME/.wallpapers/apstract-wave.jpg fill
 	exec focus output eDP-1
 #
 # Key bindings
