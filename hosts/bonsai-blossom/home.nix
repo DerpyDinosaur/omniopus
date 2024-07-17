@@ -17,8 +17,10 @@
     settings = {
       main = {
         term = "xterm-256color";
-        font = "JetBrains Mono:size=18";
-        dpi-aware = "yes";
+        font-size-adjustment = 2;
+      };
+      mouse = {
+        hide-when-typing = "yes";
       };
     };
   };
