@@ -4,12 +4,16 @@
   # Configs
   ## Sway
   home.file.".config/sway/config".source = ../../programs/sway/config;
+  ## ZSH
+  programs.zsh = {
+    enable = true;
 
-  ## Wallpaper
-  # home.file."wallpapers" = {
-  #   source = "../../wallpapers";
-  # };
-  #
+    shellAliases = {
+      battery = "cat /sys/class/power_supply/BAT0/capacity";
+    };
+  };
+
+  # Wallpapers
   home.file."pictures/wallpapers".source = ../../wallpapers;
 
   home.stateVersion = "23.11";

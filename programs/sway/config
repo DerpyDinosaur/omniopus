@@ -18,9 +18,12 @@
 #
 # Monitors
 #
-	output eDP-1 mode 1920x1080@60.008Hz pos 0 0 bg $HOME/pictures/wallpapers/spiderverse.jpg fill
-    output DP-1 mode 1920x515@60.075Hz pos 0 1080 bg $HOME/pictures/wallpapers/apstract-wave.jpg fill
-	exec focus output eDP-1
+	output eDP-1 mode 1920x1080@60.008Hz pos 0 0
+    output DP-1 mode 1920x515@60.075Hz pos 0 1080 
+
+    output eDP-1 bg $HOME/pictures/wallpapers/spiderverse.jpg fill
+    output DP-1 bg #000000 solid_color
+    exec focus output eDP-1
 #
 # Key bindings
 #
@@ -121,6 +124,12 @@
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # Gaps
+    gaps inner 10
+
+    # Border
+    default_border none
 #
 # Scratchpad:
 #
