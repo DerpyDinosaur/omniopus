@@ -28,10 +28,7 @@
 # Key bindings
 #
     # Disable Touch
-    #input touch events disabled
-    input type:touch {
-        events disabled
-    }
+    input type:touch { events disabled }
 
     # Start a terminal
     bindsym $mod+Return exec $term

@@ -15,7 +15,11 @@
   ## Foot
   programs.foot = {
     settings = {
-      font-size-adjustment = 2;
+      main = {
+        term = "xterm-256color";
+        font = "JetBrains Mono:size=18";
+        dpi-aware = "yes";
+      };
     };
   };
 
