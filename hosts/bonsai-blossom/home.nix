@@ -12,6 +12,12 @@
       battery = "cat /sys/class/power_supply/BAT0/capacity";
     };
   };
+  ## Foot
+  programs.foot = {
+    settings = {
+      font-size-adjustment = 2;
+    };
+  };
 
   # Wallpapers
   home.file."pictures/wallpapers".source = ../../wallpapers;
