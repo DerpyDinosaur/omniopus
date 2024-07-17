@@ -38,8 +38,7 @@
   services.xserver.xkb.layout = "aus";
 
   # Window Manager
-  hardware.opengl.enable = true;
-  programs.hyprland.enable = true;
+  hardware.graphics.enable = true;
   programs = {
     sway = {
       enable = true;
