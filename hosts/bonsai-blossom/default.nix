@@ -8,7 +8,6 @@
     ./hardware-configuration.nix
   ];
 
-
   networking.hostName = "bonsai-blossom";
   
   # Bootloader.
@@ -46,14 +45,12 @@
       enable = true;
       wrapperFeatures.gtk = true;
       extraPackages = with pkgs; [
-        wl-clipboard # Wayland copy&paste support
+        wl-clipboard # Wayland copy & paste support
         swaylock 
         swayidle
-        foot
-        wmenu
-        light
+        foot # Terminal
+        light # Brightness
         rofi
-        # termite
       ];
       extraSessionCommands = ''
         export SDL_VIDEODRIVER=wayland
@@ -63,7 +60,6 @@
         export MOZ_ENABLE_WAYLAND=1
       '';
     };
-    waybar.enable = true;
     light.enable = true;
   };
 
@@ -87,14 +83,23 @@
     users.${username} = import ./home.nix;
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Installing Packages
   environment.systemPackages = with pkgs; [
+    wlr-randr # Screen Display
     # Browser
     firefox-devedition
+    # Software
+    sublime4
+    gh # Github cli
   ];
+
+  # Allow unfree packages
+  nixpkgs.config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];
+  };
 
   # Docker
   virtualisation.docker = {

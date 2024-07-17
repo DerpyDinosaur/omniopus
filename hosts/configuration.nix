@@ -30,6 +30,7 @@
     neovim
     trash-cli
     bun
+    unzip
   ];
   
   programs = {
