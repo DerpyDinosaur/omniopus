@@ -14,6 +14,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Garbage Collect
+  nix.gc = {
+    automatic = true;
+    dates = "monthly";
+    options = "--delete-older-than 1m";
+  };
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -35,7 +42,13 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  services.xserver.xkb.layout = "aus";
+  services = {
+    xserver.xkb.layout = "aus";
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+    };
+  };
 
   # Window Manager
   hardware.graphics.enable = true;
@@ -44,9 +57,8 @@
       enable = true;
       wrapperFeatures.gtk = true;
       extraPackages = with pkgs; [
+        swaybg
         wl-clipboard # Wayland copy & paste support
-        swaylock 
-        swayidle
         foot # Terminal
         light # Brightness
         rofi
@@ -84,12 +96,21 @@
 
   # Installing Packages
   environment.systemPackages = with pkgs; [
-    wlr-randr # Screen Display
-    # Browser
-    firefox-devedition
     # Software
+    firefox-devedition # Browser
     sublime4
     gh # Github cli
+    pipewire # Audio Server
+    wireplumber # Audio Session Manager
+    pwvucontrol # Volume Control
+
+    # Security
+    protonmail-desktop
+    proton-pass
+
+    # Misc
+    tidal-dl
+    tidal-hifi
   ];
 
   # Allow unfree packages

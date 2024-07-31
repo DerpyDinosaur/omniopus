@@ -14,10 +14,16 @@
   };
   ## Foot
   programs.foot = {
+    enable = true;
     settings = {
       main = {
         term = "xterm-256color";
+        dpi-aware = "yes";
+        font = "monospace:size=14";
         font-size-adjustment = 2;
+      };
+      colors = {
+        alpha=0.8;
       };
       mouse = {
         hide-when-typing = "yes";
