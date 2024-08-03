@@ -33,9 +33,9 @@
   # Rofi
   programs.rofi = {
     enable = true;
-    configPath = "/home/${username}/.config/rofi/square-evergreen.rasi";
+    theme = "/home/${username}/.config/rofi/square-evergreen.rasi";
   };
-  home.file."programs/rofi".source = ../../programs/rofi;
+  home.file.".config/rofi".source = ../../programs/rofi;
 
   # Wallpapers
   home.file."pictures/wallpapers".source = ../../wallpapers;

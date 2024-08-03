@@ -61,7 +61,6 @@
         wl-clipboard # Wayland copy & paste support
         foot # Terminal
         light # Brightness
-        rofi
       ];
       extraSessionCommands = ''
         export SDL_VIDEODRIVER=wayland
