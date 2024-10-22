@@ -1,29 +1,40 @@
 { pkgs, username, ... }:
 
 {
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # Configs
+  ## Sway
+  home.file.".config/sway/config".source = ../../programs/sway/config;
+  ## ZSH
+  programs.zsh = {
+    enable = true;
 
-  # wayland.windowManager.sway = {
-  #   enable = true;
-  #   wrapperFeatures.gtk = true;
-  #   config = rec {
-  #     modifier = "Mod1"; # Alt Key
-  #     terminal = "kitty";
-  #     gaps.smartGaps = true;
-  #     # output = {
-  #     #   "Virtual-1" = {
-  #     #     mode = "1920x1080@120Hz";
-  #     #   };
-  #     #   "Virtual-2" = {
-  #     #     mode = "1920x1080@120Hz";
-  #     #   };
-  #     # };
-  #   };
-  # };
+    shellAliases = {
+      battery = "cat /sys/class/power_supply/BAT0/capacity";
+    };
+  };
+  ## Foot
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        term = "xterm-256color";
+        dpi-aware = "yes";
+        font = "monospace:size=14";
+        font-size-adjustment = 2;
+      };
+      colors = {
+        alpha=0.8;
+      };
+      mouse = {
+        hide-when-typing = "yes";
+      };
+    };
+  };
 
-  # Wallpaper
-  home.file.".wallpapers/spiderverse.jpg".source = ../../wallpapers/spiderverse.jpg;
+  # Wallpapers
+  home.file."pictures/wallpapers".source = ../../wallpapers;
 
   home.stateVersion = "23.11";
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }

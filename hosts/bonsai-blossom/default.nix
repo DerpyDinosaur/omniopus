@@ -8,12 +8,18 @@
     ./hardware-configuration.nix
   ];
 
-
   networking.hostName = "bonsai-blossom";
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Garbage Collect
+  nix.gc = {
+    automatic = true;
+    dates = "monthly";
+    options = "--delete-older-than 1m";
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -36,24 +42,26 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  services.xserver.xkb.layout = "aus";
+  services = {
+    xserver.xkb.layout = "aus";
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+    };
+  };
 
   # Window Manager
-  hardware.opengl.enable = true;
-  programs.hyprland.enable = true;
+  hardware.graphics.enable = true;
   programs = {
     sway = {
       enable = true;
       wrapperFeatures.gtk = true;
       extraPackages = with pkgs; [
-        wl-clipboard # Wayland copy&paste support
-        swaylock 
-        swayidle
-        foot
-        wmenu
-        light
+        swaybg
+        wl-clipboard # Wayland copy & paste support
+        foot # Terminal
+        light # Brightness
         rofi
-        # termite
       ];
       extraSessionCommands = ''
         export SDL_VIDEODRIVER=wayland
@@ -63,7 +71,6 @@
         export MOZ_ENABLE_WAYLAND=1
       '';
     };
-    waybar.enable = true;
     light.enable = true;
   };
 
@@ -87,14 +94,32 @@
     users.${username} = import ./home.nix;
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Installing Packages
   environment.systemPackages = with pkgs; [
-    # Browser
-    firefox-devedition
+    # Software
+    firefox-devedition # Browser
+    sublime4
+    gh # Github cli
+    pipewire # Audio Server
+    wireplumber # Audio Session Manager
+    pwvucontrol # Volume Control
+
+    # Security
+    protonmail-desktop
+    proton-pass
+
+    # Misc
+    tidal-dl
+    tidal-hifi
   ];
+
+  # Allow unfree packages
+  nixpkgs.config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];
+  };
 
   # Docker
   virtualisation.docker = {
