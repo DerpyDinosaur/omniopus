@@ -24,9 +24,4 @@
 
   # Installing Packages
   environment.systemPackages = with pkgs; [];
-
-  # WSL
-  wsl.enable = true;
-  wsl.defaultUser = "si";
-  wsl.docker-desktop.enable = true;
 }
