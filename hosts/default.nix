@@ -34,8 +34,6 @@
     specialArgs = { inherit username; };
     modules = [
       ./walnut
-      ./configuration.nix
-      nixos-wsl.nixosModules.wsl
       home-manager.nixosModules.home-manager
     ];
   };
