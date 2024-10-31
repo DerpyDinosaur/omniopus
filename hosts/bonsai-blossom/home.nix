@@ -2,8 +2,9 @@
 
 {
   # Configs
-  ## Sway
   home.file.".config/sway/config".source = ../../programs/sway/config;
+  home.file.".config/rofi-themes".source = ../../programs/rofi;
+
   ## ZSH
   programs.zsh = {
     enable = true;
@@ -12,6 +13,7 @@
       battery = "cat /sys/class/power_supply/BAT0/capacity";
     };
   };
+
   ## Foot
   programs.foot = {
     enable = true;
@@ -30,12 +32,12 @@
       };
     };
   };
+
   # Rofi
   programs.rofi = {
     enable = true;
-    theme = "/home/${username}/.config/rofi/square-evergreen.rasi";
+    theme = "/home/${username}/.config/rofi-themes/squared-evergreen.rasi";
   };
-  home.file.".config/rofi".source = ../../programs/rofi;
 
   # Wallpapers
   home.file."pictures/wallpapers".source = ../../wallpapers;
