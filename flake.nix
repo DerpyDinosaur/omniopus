@@ -19,7 +19,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
   {
     # NixOS - HOSTNAME
-    nixConfigurations = (
+    nixosConfigurations = (
       import ./machines { inherit pkgs nixos-wsl; }
     );
 
