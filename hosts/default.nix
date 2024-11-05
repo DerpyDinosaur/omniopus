@@ -4,12 +4,10 @@
 # Laptop - Bonsai tree species prefixed with 'bonsai-'
 # Servers - Fruit trees species since they bare services (fruit)
 
-{ nixpkgs, home-manager, nixos-wsl, username, ... }:
+{ nixpkgs, home-manager, inputs, ... }: {
 
-{
   bonsai-blossom = nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
-    specialArgs = { inherit username; };
+    specialArgs = { inherit inputs; };
     modules = [
       ./bonsai-blossom
       ./configuration.nix
@@ -19,8 +17,7 @@
   };
 
   oak = nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
-    specialArgs = { inherit username; };
+    specialArgs = { inherit inputs; };
     modules = [
       ./oak
       ./configuration.nix
@@ -30,8 +27,7 @@
   };
 
   walnut = nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
-    specialArgs = { inherit username; };
+    specialArgs = { inherit inputs; };
     modules = [
       ./walnut
       home-manager.nixosModules.home-manager

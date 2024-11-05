@@ -13,18 +13,19 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, nixos-wsl, ... } @ inputs:
   let
-    username = "adam";
-  in
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   {
-    nixosConfigurations = (
-      import ./hosts {
-        # Functional
-        inherit nixpkgs home-manager nixos-wsl;
-        # Non-Functional
-        inherit username;
-      }
+    # NixOS - HOSTNAME
+    nixConfigurations = (
+      import ./machines { inherit pkgs nixos-wsl; }
+    );
+
+    # Home Manager - USERNAME
+    homeConfigurations = (
+      import ./users { inherit pkgs nixos-wsl; }
     );
   };
 }
