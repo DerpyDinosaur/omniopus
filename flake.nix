@@ -29,7 +29,7 @@
       albalamia = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./adam.nix
+          ./users/adam.nix
         ];
       };
     };
