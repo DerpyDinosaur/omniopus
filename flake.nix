@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixos-wsl, ... } @ inputs:
+  outputs = inputs@{ nixpkgs, home-manager, nixos-wsl, ... }:
   {
     # NixOS - HOSTNAME
     nixosConfigurations = (
