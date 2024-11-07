@@ -21,13 +21,13 @@
   {
     # NixOS - HOSTNAME
     nixosConfigurations = (
-      import ./machines { inherit pkgs nixos-wsl; }
+      import ./machines { inherit nixpkgs nixos-wsl; }
     );
 
     # Home Manager - USERNAME
     homeConfigurations = {
       albalamia = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        inherit nixpkgs;
         modules = [
           ./users/adam.nix
         ];
