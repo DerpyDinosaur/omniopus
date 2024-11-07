@@ -17,7 +17,9 @@
   {
     # NixOS - HOSTNAME
     nixosConfigurations = (
-      import ./machines { inherit nixpkgs nixos-wsl; }
+      import ./machines {
+        inherit nixpkgs nixos-wsl;
+      }
     );
 
     # Home Manager - USERNAME

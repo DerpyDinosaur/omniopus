@@ -21,7 +21,6 @@
     modules = [
       ./oak
       ./configuration.nix
-      nixos-wsl.nixosModules.wsl
       home-manager.nixosModules.home-manager
     ];
   };
