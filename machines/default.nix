@@ -4,7 +4,7 @@
 # Laptop - Bonsai tree species prefixed with 'bonsai-'
 # Servers - Fruit trees species since they bare services (fruit)
 
-{ nixpkgs, home-manager, nixos-wsl inputs, ... }: {
+{ nixpkgs, home-manager, nixos-wsl, inputs, ... }: {
 
   oak = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs; };
