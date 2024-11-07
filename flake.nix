@@ -25,9 +25,13 @@
     );
 
     # Home Manager - USERNAME
-    homeConfigurations = (
-      import ./users { inherit pkgs; }
-    );
+    homeConfigurations = {
+      albalamia = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./adam.nix
+        ];
+      };
+    };
   };
 }
-
