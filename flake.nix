@@ -14,10 +14,6 @@
   };
 
   outputs = { nixpkgs, home-manager, nixos-wsl, ... } @ inputs:
-  let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in
   {
     # NixOS - HOSTNAME
     nixosConfigurations = (
@@ -25,13 +21,13 @@
     );
 
     # Home Manager - USERNAME
-    homeConfigurations = {
-      albalamia = home-manager.lib.homeManagerConfiguration {
-        inherit nixpkgs;
-        modules = [
-          ./users/adam.nix
-        ];
-      };
-    };
+    # homeConfigurations = {
+    #   albalamia = home-manager.lib.homeManagerConfiguration {
+    #     inherit nixpkgs;
+    #     modules = [
+    #       ./users/adam.nix
+    #     ];
+    #   };
+    # };
   };
 }
