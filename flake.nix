@@ -17,7 +17,7 @@
   {
     # NixOS - HOSTNAME
     nixosConfigurations = (
-      import ./machines {
+      import ./hosts {
         inherit nixpkgs nixos-wsl;
       }
     );
