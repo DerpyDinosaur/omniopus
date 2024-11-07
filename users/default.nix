@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager, nixos-wsl inputs, ... }: {
+{ nixpkgs, home-manager, inputs, ... }: {
 
   albalamia = home-manager.lib.homeManagerConfiguration {
     specialArgs = { inherit inputs; };

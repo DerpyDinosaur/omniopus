@@ -26,7 +26,7 @@
 
     # Home Manager - USERNAME
     homeConfigurations = (
-      import ./users { inherit pkgs nixos-wsl; }
+      import ./users { inherit pkgs; }
     );
   };
 }
