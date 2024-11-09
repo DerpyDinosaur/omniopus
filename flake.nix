@@ -22,6 +22,10 @@
       inherit system;
       config.allowUnfree = true;
     };
+
+    home = (import ./users/test.nix {
+      inherit pkgs stateVersion system;
+    });
   in
   {
     # NixOS - HOSTNAME
@@ -32,11 +36,9 @@
     # );
 
     # Home Manager - USERNAME
-    homeConfigurations.adam = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.albalamia = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [
-        ./users/test.nix
-      ];
+      modules = [ home ];
     };
   };
 }
