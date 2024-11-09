@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nixos-wsl, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
     stateVersion = "22.11";
@@ -32,13 +32,11 @@
     # );
 
     # Home Manager - USERNAME
-    homeConfigurations = {
-      albalamia = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./users/adam.nix
-        ];
-      };
+    homeConfigurations.adam = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./users/test.nix
+      ];
     };
   };
 }
