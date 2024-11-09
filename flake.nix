@@ -14,22 +14,31 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, nixos-wsl, ... }:
+  let
+    system = "x86_64-linux";
+    stateVersion = "22.11";
+
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in
   {
     # NixOS - HOSTNAME
-    nixosConfigurations = (
-      import ./hosts {
-        inherit nixpkgs nixos-wsl;
-      }
-    );
+    # nixosConfigurations = (
+    #   import ./hosts {
+    #     inherit nixpkgs nixos-wsl;
+    #   }
+    # );
 
     # Home Manager - USERNAME
-    # homeConfigurations = {
-    #   albalamia = home-manager.lib.homeManagerConfiguration {
-    #     inherit nixpkgs;
-    #     modules = [
-    #       ./users/adam.nix
-    #     ];
-    #   };
-    # };
+    homeConfigurations = {
+      albalamia = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./users/adam.nix
+        ];
+      };
+    };
   };
 }
