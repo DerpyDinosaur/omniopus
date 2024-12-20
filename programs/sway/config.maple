@@ -20,7 +20,7 @@
 #
     output DP-4 {
         position 840 0
-        transform "90"
+        transform "270"
         mode 1920x1080@143.981Hz
         background "$HOME/pictures/wallpapers/abstract-wave.png" fill
     }
