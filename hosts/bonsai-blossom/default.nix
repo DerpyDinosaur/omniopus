@@ -14,6 +14,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # NixPkgs Configuration
+  nixpkgs.config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];
+  };
+
   # Garbage Collect
   nix.gc = {
     automatic = true;
@@ -96,8 +104,9 @@
   # Installing Packages
   environment.systemPackages = with pkgs; [
     # Software
-    firefox-devedition # Browser
+    firefox-esr # Browser
     sublime4
+    sublime-merge
     gh # Github cli
     pipewire # Audio Server
     wireplumber # Audio Session Manager
@@ -110,15 +119,10 @@
     # Misc
     tidal-dl
     tidal-hifi
-  ];
 
-  # Allow unfree packages
-  nixpkgs.config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];
-  };
+    # Rice
+    nordzy-cursor-theme
+  ];
 
   # Docker
   virtualisation.docker = {
