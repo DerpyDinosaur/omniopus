@@ -122,6 +122,9 @@
 
     # Rice
     nordzy-cursor-theme
+
+    # Games
+    steam
   ];
 
   # Docker
