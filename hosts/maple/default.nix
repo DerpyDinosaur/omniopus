@@ -110,7 +110,7 @@
     pipewire # Audio Server
     wireplumber # Audio Session Manager
     pwvucontrol # Volume Control
-    discord
+    vesktop # Wayland discord client
 
     # Security
     protonmail-desktop
