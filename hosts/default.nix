@@ -29,14 +29,14 @@
     ];
   };
 
-  walnut = nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
-    specialArgs = { inherit username; };
-    modules = [
-      ./walnut
-      home-manager.nixosModules.home-manager
-    ];
-  };
+  # walnut = nixpkgs.lib.nixosSystem {
+  #   system = "x86_64-linux";
+  #   specialArgs = { inherit username; };
+  #   modules = [
+  #     ./walnut
+  #     home-manager.nixosModules.home-manager
+  #   ];
+  # };
 
   maple = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";

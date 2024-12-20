@@ -146,6 +146,4 @@
       monospace = [ "JetBrains Mono" ];
     };
   };
-
-  system.stateVersion = "24.11";
 }
