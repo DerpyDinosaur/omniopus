@@ -39,10 +39,6 @@
     theme = "/home/${username}/.config/rofi-themes/squared-evergreen.rasi";
   };
 
-  programs.steam = {
-    enable = true;
-  };
-
   # Wallpapers
   home.file."pictures/wallpapers".source = ../../wallpapers;
 
