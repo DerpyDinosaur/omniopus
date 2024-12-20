@@ -41,7 +41,7 @@
 
   programs.steam = {
     enable = true;
-  }
+  };
 
   # Wallpapers
   home.file."pictures/wallpapers".source = ../../wallpapers;
