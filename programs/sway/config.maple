@@ -19,15 +19,15 @@
 # Monitors
 #
     output DP-4 {
-        position 0 0
-        transform anticlockwise
+        position 840 0
+        transform "90"
         mode 1920x1080@143.981Hz
         background "$HOME/pictures/wallpapers/abstract-wave.png" fill
     }
 
     output DP-3 {
-        position 1080 240
-        mode 3440x1440@174.963Hz
+        position 1920 240
+        mode 3440x1440@59.973Hz
         background "$HOME/pictures/wallpapers/spiderverse.jpg" fill
     }
     exec focus output DP-3
