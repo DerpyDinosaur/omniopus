@@ -134,7 +134,7 @@
     packages = with pkgs; [
       noto-fonts
       noto-fonts-emoji
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       source-han-sans
       # Mono
       jetbrains-mono
@@ -147,6 +147,4 @@
       monospace = [ "JetBrains Mono" ];
     };
   };
-
-  system.stateVersion = "24.11";
 }
