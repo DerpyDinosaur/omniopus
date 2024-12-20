@@ -37,4 +37,15 @@
       home-manager.nixosModules.home-manager
     ];
   };
+
+  maple = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+    specialArgs = { inherit username; };
+    modules = [
+      ./maple
+      ./configuration.nix
+      ../programs/greetd
+      home-manager.nixosModules.home-manager
+    ];
+  };
 }
