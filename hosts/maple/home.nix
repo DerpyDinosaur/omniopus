@@ -2,7 +2,7 @@
 
 {
   # Configs
-  home.file.".config/sway/config".source = ../../programs/sway/config;
+  home.file.".config/sway/config".source = ../../programs/sway/config.maple;
   home.file.".config/rofi-themes".source = ../../programs/rofi;
 
   ## ZSH
