@@ -79,6 +79,7 @@
       '';
     };
     light.enable = true;
+    steam.enable = true;
   };
 
   # Define user accounts
