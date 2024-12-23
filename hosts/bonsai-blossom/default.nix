@@ -79,7 +79,7 @@
       '';
     };
     light.enable = true;
-    steam.enable = true;
+    # steam.enable = true;
   };
 
   # Define user accounts
@@ -123,8 +123,6 @@
 
     # Rice
     nordzy-cursor-theme
-    # Games
-    steam
   ];
 
   # Docker
