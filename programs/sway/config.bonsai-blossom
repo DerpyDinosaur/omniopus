@@ -140,9 +140,8 @@
     default_border none
 
     # Gaps
-    #gaps inner 6
-    smart_gaps on
-    hide_edge_borders smart
+    gaps inner 6
+    gaps outer 0
 #
 # Scratchpad:
 #
