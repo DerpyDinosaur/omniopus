@@ -51,6 +51,11 @@
       ./configuration.nix
       ../programs/greetd
       home-manager.nixosModules.home-manager
+      {
+        environment.systemPackages = [
+          ghostty.packages.x86_64-linux.default
+        ];
+      }
     ];
   };
 }
