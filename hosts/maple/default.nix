@@ -112,6 +112,7 @@
     wireplumber # Audio Session Manager
     pwvucontrol # Volume Control
     vesktop # Wayland discord client
+    ghostty # Terminal
 
     # Security
     protonmail-desktop
