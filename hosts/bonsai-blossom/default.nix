@@ -112,7 +112,6 @@
     pipewire # Audio Server
     wireplumber # Audio Session Manager
     pwvucontrol # Volume Control
-    ghostty # Terminal
 
     # Security
     protonmail-desktop

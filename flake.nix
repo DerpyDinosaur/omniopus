@@ -11,9 +11,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, ghostty, ... }:
   let
     username = "adam";
   in
@@ -21,7 +24,7 @@
     nixosConfigurations = (
       import ./hosts {
         # Functional
-        inherit nixpkgs home-manager nixos-wsl;
+        inherit nixpkgs home-manager nixos-wsl ghostty;
         # Non-Functional
         inherit username;
       }
