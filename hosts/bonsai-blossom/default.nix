@@ -112,6 +112,7 @@
     pipewire # Audio Server
     wireplumber # Audio Session Manager
     pwvucontrol # Volume Control
+    obsidian # Note Taking
 
     # Security
     protonmail-desktop
