@@ -27,17 +27,17 @@
     # Github
     git
     # Tools
-    neovim
     trash-cli
     bun
     unzip
   ];
   
   programs = {
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
+    # neovim = {
+    #   enable = true;
+    #   defaultEditor = true;
+    # };
+    nvf.enable = true;
 
     zsh = {
       enable = true;

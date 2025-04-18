@@ -106,13 +106,18 @@
   environment.systemPackages = with pkgs; [
     # Software
     firefox-esr # Browser
-    sublime4
-    sublime-merge
     gh # Github cli
     pipewire # Audio Server
     wireplumber # Audio Session Manager
     pwvucontrol # Volume Control
     obsidian # Note Taking
+
+    # Programming
+    sublime4
+    sublime-merge
+    ## LSP
+    svelte-language-server
+    typescript-language-server
 
     # Security
     protonmail-desktop
