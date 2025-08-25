@@ -115,7 +115,6 @@
     # Programming
     sublime4
     sublime-merge
-    nx
     ## Languages
     rustup
     gcc
