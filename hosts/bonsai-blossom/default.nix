@@ -121,6 +121,7 @@
     ## LSP
     svelte-language-server
     typescript-language-server
+    nodejs_20
 
     # Security
     protonmail-desktop
