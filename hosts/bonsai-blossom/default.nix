@@ -115,12 +115,11 @@
     # Programming
     sublime4
     sublime-merge
+    zed-editor
     ## Languages
     rustup
     gcc
     ## LSP
-    svelte-language-server
-    typescript-language-server
     nodejs_20
 
     # Security
