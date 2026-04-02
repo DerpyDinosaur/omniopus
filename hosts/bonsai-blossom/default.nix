@@ -3,13 +3,13 @@
 { config, pkgs, home-manager, username, ... }:
 
 {
-  imports = [ 
+  imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
   networking.hostName = "bonsai-blossom";
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -68,7 +68,6 @@
         swaybg
         wl-clipboard # Wayland copy & paste support
         foot # Terminal
-        light # Brightness
       ];
       extraSessionCommands = ''
         export SDL_VIDEODRIVER=wayland
@@ -78,7 +77,6 @@
         export MOZ_ENABLE_WAYLAND=1
       '';
     };
-    light.enable = true;
     nix-ld.enable = true;
     # steam.enable = true;
   };
