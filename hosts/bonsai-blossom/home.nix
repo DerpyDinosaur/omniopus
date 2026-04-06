@@ -4,6 +4,7 @@
   # Configs
   home.file.".config/sway/config".source = ../../programs/sway/config.bonsai-blossom;
   home.file.".config/rofi-themes".source = ../../programs/rofi;
+  home.file.".config/ghostty/config".source = ../../programs/ghostty/config;
 
   ## ZSH
   programs.zsh = {

@@ -11,11 +11,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ghostty.url = "github:ghostty-org/ghostty";
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, ghostty, nvf, ... }:
+  outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, nvf, ... }:
   let
     username = "adam";
   in
@@ -23,11 +22,10 @@
     nixosConfigurations = (
       import ./hosts {
         # Functional
-        inherit nixpkgs home-manager nixos-wsl ghostty nvf;
+        inherit nixpkgs home-manager nixos-wsl nvf;
         # Non-Functional
         inherit username;
       }
     );
   };
 }
-

@@ -78,6 +78,7 @@
       '';
     };
     nix-ld.enable = true;
+    # brightnessctl.enable = true;
     # steam.enable = true;
   };
 
@@ -104,12 +105,14 @@
   # Installing Packages
   environment.systemPackages = with pkgs; [
     # Software
+    ghostty # Terminal
     firefox-esr # Browser
     gh # Github cli
     pipewire # Audio Server
     wireplumber # Audio Session Manager
     pwvucontrol # Volume Control
     obsidian # Note Taking
+    brightnessctl
 
     # Programming
     sublime4

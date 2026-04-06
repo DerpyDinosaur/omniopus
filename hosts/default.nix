@@ -4,7 +4,7 @@
 # Laptop - Bonsai tree species prefixed with 'bonsai-'
 # Servers - Fruit trees species since they bare services (fruit)
 
-{ nixpkgs, home-manager, nixos-wsl, username, ghostty, nvf, ... }:
+{ nixpkgs, home-manager, nixos-wsl, username, nvf, ... }:
 
 {
   bonsai-blossom = nixpkgs.lib.nixosSystem {
@@ -15,11 +15,6 @@
       ./configuration.nix
       ../programs/greetd
       home-manager.nixosModules.home-manager
-      {
-        environment.systemPackages = [
-          ghostty.packages.x86_64-linux.default
-        ];
-      }
       nvf.nixosModules.default
     ];
   };
